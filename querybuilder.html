@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsPeople Query Builder</title>
+  <link rel="stylesheet" href="styles/subpages-styles.css">
+  <link rel="stylesheet" href="styles/iframe.css">
+  <link rel="stylesheet" href="styles/querybuilder.css">
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Dashboard</button>
+   
+    <h2 class="instruction-text">MapsPeople Office Austin</h2>
+
+    <div class="map-container">
+      <iframe id="map-iframe" src="https://map.mapsindoors.com/?apiKey=mapspeople3d&startZoomLevel=20&bearing=30&pitch=30" frameborder="0"></iframe>
+  </div>
+
+  
+  <div class="container">
+    <div class="url-box">
+        <label for="current-url">Add Query Parameters to the URL below:</label>
+        <p></p>
+        <input type="text" id="current-url" value="https://map.mapsindoors.com/?apiKey=mapspeople3d&startZoomLevel=20&bearing=30&pitch=30">
+        <button class="button" onclick="copyToClipboard()">Copy URL</button>
+    </div>
+    <div class="param-list">
+        <label>Query Parameters:</label>
+        <p></p>
+
+        <!-- API KEY -->
+        <div class="param-item">
+          <label for="apiKey-dropdown">apiKey (preset):</label>
+          <div class="input-wrapper">
+              <select id="apiKey-dropdown">
+                  <option value="">Select a preset API key</option>
+                  <option value="mapspeople3d">MapsPeople Office</option>
+                  <option value="demomall">Mall</option>
+                  <option value="demostadium">Stadium</option>
+                  <option value="phoenixcc">Event</option>
+              </select>
+          </div>
+          <div class="param-comment">Select a predefined API key</div>
+      </div>
+      <div class="param-item">
+          <label for="apiKey-custom">apiKey (custom):</label>
+          <div class="input-wrapper">
+              <input type="text" id="apiKey-custom" placeholder="Enter custom API key">
+          </div>
+          <div class="param-comment">Or enter your own API key</div>
+      </div>
+        <!-- Langauge -->
+        <div class="param-item">
+          <label for="language">language:</label>
+          <div class="input-wrapper">
+            <select id="language-dropdown">
+              <option value="">Select a language</option>
+              <option value="en">English (default)</option>
+              <option value="da">Danish</option>
+              <option value="de">German</option>
+              <option value="fr">French</option>
+              <option value="it">Italian</option>
+            </select>
+          </div>
+          <div class="param-comment">Sets the language. Default is English</div>
+        </div>
+        <!-- Zoom -->
+        <div class="param-item">
+          <label for="startZoomLevel">startZoomLevel:</label>
+          <div class="input-wrapper">
+              <input type="text" id="startZoomLevel" placeholder="Enter value">
+          </div>
+          <div class="param-comment">
+            Sets the initial zoom level of the map. Values between 20 - 22 are most common.
+          </div>
+        </div>
+        <!-- Pitch -->
+        <div class="param-item">
+          <label for="pitch">pitch:</label>
+          <div class="input-wrapper">
+            <input type="text" id="pitch" placeholder="Enter value">
+          </div>
+          <div class="param-comment">
+            Controls the angle at which the map is viewed. Pitch=0 is top-down. Pitch=90 is flat.
+          </div>
+        </div>
+        <!-- Bearing -->
+        <div class="param-item">
+          <label for="bearing">bearing:</label>
+          <div class="input-wrapper">
+            <input type="text" id="bearing" placeholder="Enter value">
+          </div>
+          <div class="param-comment">
+            Controls the rotation of the map. Bearing=0 is due North, 90=East, 180=South, 270=West.
+          </div>
+        </div>
+        <!-- KioskOrigin -->
+        <div class="param-item" id="kioskOriginLocationId-container" style="display: none;">
+          <label for="kioskOriginLocationId">Preset Kiosk Mode:</label>
+          <div class="input-wrapper">
+          <select id="kioskOriginLocationId-dropdown">
+              <option value="">Select a Location ID</option>
+              <option value="b47a973a8450439598c0189c">Kiosk (configures zoom, bearing and pitch)</option>
+          </select>
+          </div>
+          <div class="param-comment">
+            Will center the map on load on a specific location and enable kiosk mode.
+          </div>
+        </div>
+        <div class="param-item">
+          <label for="kiosk-custom">kioskOriginLocationId:</label>
+          <div class="input-wrapper">
+              <input type="text" id="kiosk-custom" placeholder="Enter custom location">
+          </div>
+          <div class="param-comment">Enter a location id from the CMS</div>
+      </div>
+        <!-- Keyboard -->
+        <div class="param-item">
+          <label for="useKeyboard">useKeyboard:</label>
+          <div class="input-wrapper">
+          <select id="useKeyboard-dropdown">
+              <option value="">Set to on or off</option>
+              <option value="true">On</option>
+              <option value="false">Off</option>
+          </select>
+          </div>
+          <div class="param-comment">
+            Enbables an on-screen keyboard. Only works when KioskOriginLocationId is added.
+          </div>
+        </div>
+
+        <!-- Add more parameters as needed -->
+    </div>
+    <div class="param-inputs">
+        <button class="button" onclick="addParamToURL()">Add to URL</button>
+        <button class="button" onclick="updateIframe()">Update iFrame</button>
+        <button class="button" onclick="refreshPage()">Refresh All Parameters</button>
+    </div>
+</div>
+<script src="scripts/querybuilder.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Template TEST</title>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Map</title>
+    <link rel="stylesheet" href="styles/subpages-styles.css">
+    <script type="module">
+        import MapsindoorsMap from 'https://www.unpkg.com/@mapsindoors/map-template@stable/dist/mapsindoors-webcomponent.es.js';
+        window.customElements.define('mapsindoors-map', MapsIndoorsMap)
+    </script>
+ 
+</head>
+
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Dashboard</button>
+    <mapsindoors-map supports-url-parameters=true api-key="02c329e6777d431a88480a09" mapbox-access-token="pk.eyJ1IjoibWFwc3Blb3BsZSIsImEiOiJjbHF6bWhjM2wwNnZrMmpxYnNiaDIycmpwIn0.ldaIeNH9dhHyjZs2FxY4WA" pitch="20" startZoomLevel=22 logo=https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_7a75ff13f42605422950b411ab7e03b5/mapspeople.png></mapsindoors-map>
+   
+</body>

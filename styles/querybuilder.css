@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  color: #023C3A;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 100%;
+  max-width: 1400px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.map-container {
+  position: relative;
+  width: 90%;
+  min-height: 400px; 
+  margin-bottom: 30px;
+  align-self: stretch;
+}
+
+#map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 400px; 
+}
+
+.url-box {
+  width: 100%;
+  width: 1600px;
+  margin-bottom: 30px;
+}
+
+#current-url {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.url-box input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.param-list {
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.param-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.param-item.grouped {
+  margin-bottom: 5px; /* Reduced margin for grouped items */
+}
+
+.param-item.grouped + .param-item.grouped {
+  margin-top: -10px; /* Negative margin to bring grouped items closer */
+}
+
+.param-item label {
+  display: block;
+  width: 200px;
+  flex-shrink: 0;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.param-item input,
+.param-item select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.input-wrapper {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+.param-comment {
+  flex-grow: 1;
+  font-size: 0.9em;
+  color: #666;
+}
+.button {
+  padding: 10px;
+  background-color: #023C3A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.button:hover {
+  background-color: #03504e;
+}
+
+@media (min-width: 1200px) {
+  .map-container {
+    padding-bottom: 340px; /* Fixed height for larger screens (16:9 ratio of 1200px width) */
+  }
+}

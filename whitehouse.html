@@ -1,0 +1,43 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapsIndoors</title>
+  <link rel="stylesheet" href="styles/subpages-styles.css">
+  <script src="https://unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Dashboard</button>
+    <mi-map-googlemaps
+        style="width: 90vw; height: 80vh;"
+        gm-api-key="AIzaSyCqNWLU8abaJBjmnlT_uxjikDekWyNc_vU"
+        mi-api-key="d876ff0e60bb430b8fabb145"
+        floor-selector-control-position="TOP_RIGHT">
+    </mi-map-googlemaps>
+
+    <!-- Travel mode selector -->
+    <label for="travel-modes">Choose a travel mode:</label>
+    <select name="travelModeSelector" id="travel-modes">
+        <option value="walking" selected>Walking</option>
+        <option value="bicycling">Bicycling</option>
+        <option value="driving">Driving</option>
+        <option value="transit">Transit</option>
+    </select>
+
+    <mi-search 
+        style="width: 600px;"
+        mapsindoors="true"
+        placeholder="Search">
+    </mi-search>
+    <mi-list
+        style="width: 600px; height: 400px;"
+        scroll-buttons-enabled="true"
+        scroll-length="200">
+    </mi-list>
+  <script src="/scripts/whitehouse.js"></script>
+</body>
+</html>

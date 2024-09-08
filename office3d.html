@@ -1,0 +1,54 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White House Mapbox</title>
+  <link rel="stylesheet" href="styles/subpages-styles.css">
+  <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.36.2/mapsindoors-4.36.2.js.gz?apiKey=02c329e6777d431a88480a09"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js'></script>
+
+<link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css?' rel='stylesheet' />
+
+</head>
+
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Dashboard</button>
+    
+    <div class="control-panel">
+        <label for="venue-selector">Select a Venue:</label>
+        <select id="venue-selector">
+            <!-- Options will be added dynamically -->
+        </select>
+    </div>
+
+    <div id="map"></div>
+    
+    <!-- Travel mode selector -->
+<label for="travel-modes">Choose a travel mode:</label>
+<select name="travelModeSelector" id="travel-modes">
+  <option value="walking" selected>Walking</option>
+  <option value="bicycling">Bicycling</option>
+  <option value="driving">Driving</option>
+  <option value="transit">Transit</option>
+</select>
+    
+    <script src="/scripts/office3d.js"></script>
+    <input type="text" placeholder="Search">
+    <button onclick="onSearch()">Search</button>
+    <ul id="search-results"></ul>
+    
+</body>
+
+</html>
